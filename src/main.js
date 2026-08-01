@@ -62,7 +62,7 @@ const renderCountryInfo = (country) => {
 
         `)
     } else {
-        message('Country not found!')
+        message('Country not found!', 2500)
     }
 }
 
@@ -80,7 +80,15 @@ countryInput.addEventListener("input", event => {
                     data,
                 } = countries
 
-                data.meta.total > 1 ? renderCountriesList(data.objects) : renderCountryInfo(data.objects[0])
+                if (data.meta.total > 1) {
+                    renderCountriesList(data.objects)
+
+                    if (data.meta.total >= 10) {
+                        message('To many matches found. Please enter a more specific query', 2500)
+                    }
+                } else {
+                    renderCountryInfo(data.objects[0])
+                }
             })
         }
     }, 500)
