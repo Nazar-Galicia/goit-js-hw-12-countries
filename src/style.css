@@ -1,8 +1,203 @@
-html {
-  color-scheme: light dark;
-  font-family: system-ui;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+
+    /* фон з крапками як на макеті */
+    background-color: #fff;
+    background-image: radial-gradient(#d9e1e8 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+}
+
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+
+/* Назва країни */
+.country-name {
+    text-align: center;
+    font-size: 72px;
+    font-weight: 500;
+    margin: 30px 0 80px;
+    letter-spacing: -2px;
+}
+
+
+/* Основний блок */
+.country-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+
+/* Ліва частина */
+.country-info {
+    flex: 1;
+}
+
+
+.country-info p {
+    font-size: 36px;
+    margin: 45px 0;
+}
+
+
+.country-info strong {
+    font-weight: 700;
+}
+
+
+.capital,
+.population {
+    font-weight: 400;
+}
+
+
+/* Мови */
+.languages-block {
+    font-size: 36px;
+    margin-top: 50px;
+}
+
+
+.languages {
+    margin-top: 30px;
+    padding-left: 60px;
+}
+
+
+.languages li {
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+
+/* Прапор */
+.flag {
+    width: 520px;
+    height: 490px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Адаптація */
+@media (max-width: 900px) {
+
+    .country-name {
+        font-size: 48px;
+        margin-bottom: 40px;
+    }
+
+    .country-card {
+        flex-direction: column;
+    }
+
+    .country-info p,
+    .languages-block {
+        font-size: 28px;
+    }
+
+    .languages li {
+        font-size: 26px;
+    }
+
+    .flag {
+        width: 350px;
+        height: 330px;
+    }
+}
+.fetch-container {
+    max-width: 70%;
+
+    display: flex;
+    margin: 0 auto;
+
+    flex-direction: column;
+    align-items: center;
+}
+.search-input {
+    width: 70%;
+    height: 100px;
+
+    border: 2px solid #c8c8c8;
+    border-radius: 6px;
+
+    display: block;
+    margin: 20px auto;
+
+    padding: 0 25px;
+
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: white;
+    color: #222;
+
+    outline: none;
+}
+
+
+.search-input:focus {
+    border-color: #999;
+}
+.country-list {
+    list-style: none;
+
+    margin-top: 45px;
+    padding-left: 40px;
+
+    align-self: flex-start;
+}
+
+
+.country-list li {
+    position: relative;
+
+    font-size: 38px;
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+}
+
+
+/* чорна крапка */
+.country-list li::before {
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    background: #222;
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: -35px;
+    top: 22px;
+}
+
+
+.country-list li:hover {
+    color: #555;
 }
