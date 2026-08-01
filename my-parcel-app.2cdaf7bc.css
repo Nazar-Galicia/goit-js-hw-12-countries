@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #222;
+  background-color: #fff;
+  background-image: radial-gradient(#d9e1e8 1.5px, #0000 1.5px);
+  background-size: 24px 24px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.country-name {
+  text-align: center;
+  letter-spacing: -2px;
+  margin: 30px 0 80px;
+  font-size: 72px;
+  font-weight: 500;
+}
+
+.country-card {
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  display: flex;
+}
+
+.country-info {
+  flex: 1;
+}
+
+.country-info p {
+  margin: 45px 0;
+  font-size: 36px;
+}
+
+.country-info strong {
+  font-weight: 700;
+}
+
+.capital, .population {
+  font-weight: 400;
+}
+
+.languages-block {
+  margin-top: 50px;
+  font-size: 36px;
+}
+
+.languages {
+  margin-top: 30px;
+  padding-left: 60px;
+}
+
+.languages li {
+  margin-bottom: 25px;
+  font-size: 34px;
+}
+
+.flag {
+  justify-content: center;
+  align-items: center;
+  width: 520px;
+  height: 490px;
+  display: flex;
+}
+
+.flag img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (width <= 900px) {
+  .country-name {
+    margin-bottom: 40px;
+    font-size: 48px;
+  }
+
+  .country-card {
+    flex-direction: column;
+  }
+
+  .country-info p, .languages-block {
+    font-size: 28px;
+  }
+
+  .languages li {
+    font-size: 26px;
+  }
+
+  .flag {
+    width: 350px;
+    height: 330px;
+  }
+}
+
+.fetch-container {
+  flex-direction: column;
+  align-items: center;
+  max-width: 70%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.search-input {
+  color: #222;
+  background: #fff;
+  border: 2px solid #c8c8c8;
+  border-radius: 6px;
+  outline: none;
+  width: 70%;
+  height: 100px;
+  margin: 20px auto;
+  padding: 0 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  display: block;
+}
+
+.search-input:focus {
+  border-color: #999;
+}
+
+.country-list {
+  align-self: flex-start;
+  margin-top: 45px;
+  padding-left: 40px;
+  list-style: none;
+}
+
+.country-list li {
+  cursor: pointer;
+  margin-bottom: 12px;
+  font-size: 38px;
+  line-height: 1.5;
+  position: relative;
+}
+
+.country-list li:before {
+  content: "";
+  background: #222;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 22px;
+  left: -35px;
+}
+
+.country-list li:hover {
+  color: #555;
+}
+/*# sourceMappingURL=my-parcel-app.2cdaf7bc.css.map */
