@@ -767,7 +767,7 @@ const renderCountryInfo = (country)=>{
         </main>
 
         `);
-    } else (0, _messageDefault.default)('Country not found!');
+    } else (0, _messageDefault.default)('Country not found!', 2500);
 };
 countryInput.addEventListener("input", (event)=>{
     clearTimeout(debounceTimeout);
@@ -776,12 +776,15 @@ countryInput.addEventListener("input", (event)=>{
         if (query) (0, _fetchCountriesDefault.default)(query).then((countries)=>{
             fetchContainer.innerHTML = '';
             const { data } = countries;
-            data.meta.total > 1 ? renderCountriesList(data.objects) : renderCountryInfo(data.objects[0]);
+            if (data.meta.total > 1) {
+                renderCountriesList(data.objects);
+                if (data.meta.total >= 10) (0, _messageDefault.default)('To many matches found. Please enter a more specific query', 2500);
+            } else renderCountryInfo(data.objects[0]);
         });
     }, 500);
 });
 
-},{"./fetchCountries":"bCGdT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./message":"6o71b"}],"bCGdT":[function(require,module,exports,__globalThis) {
+},{"./fetchCountries":"bCGdT","./message":"6o71b","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"bCGdT":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>fetchCountries);
